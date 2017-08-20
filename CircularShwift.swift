@@ -4,12 +4,12 @@
 //  CC-BY-SA-4.0
 //
 
-precedencegroup BitwiseShiftPrecedence {
+precedencegroup CircularShwift {
     associativity: none
-    higherThan: LogicalConjunctionPrecedence
+    higherThan: BitwiseShiftPrecedence
 }
 
-infix operator  ~<< : BitwiseShiftPrecedence
+infix operator  ~<< : CircularShwift
 
 public func ~<< (lhs: UInt32, rhs: Int) -> UInt32 {
     return (lhs << UInt32(rhs)) | (lhs >> UInt32(32 - rhs));

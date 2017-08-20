@@ -13,12 +13,12 @@ public func ~<< (lhs: UInt32, rhs: Int) -> UInt32 {
 
 is now:
 ```swift
-precedencegroup BitwiseShiftPrecedence {
+precedencegroup CircularShwift {
     associativity: none
-    higherThan: LogicalConjunctionPrecedence
+    higherThan: BitwiseShiftPrecedence
 }
 
-infix operator  ~<< : BitwiseShiftPrecedence
+infix operator  ~<< : CircularShwift
 
 public func ~<< (lhs: UInt32, rhs: Int) -> UInt32 {
     return (lhs << UInt32(rhs)) | (lhs >> UInt32(32 - rhs));
